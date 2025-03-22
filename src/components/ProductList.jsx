@@ -1,4 +1,5 @@
 import Product from "./Product";
+import Modal from "./Modal";
 
 function ProductList({ desserts, isPending }) {
   return (

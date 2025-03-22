@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 
 function YourCart() {
+  const [isModalOpen, setModalIsOpen] = useState(false);
+
   return (
     <div className="your-name">
       <h1 className="your-text">Your Cart (7)</h1>
@@ -37,11 +40,25 @@ function YourCart() {
           <img src="/images/icon-remove-item.svg" alt="remove-icon" />
         </div>
       </div>
-
       <div className="your-total">
         <h3 className="your-order">Order Total</h3>
         <p className="your-price">$46.50</p>
       </div>
+      <div className="neutral">
+        <img
+          className="neutral-img"
+          src="/images/icon-carbon-neutral.svg"
+          alt=""
+        />
+        <p className="neutral-text">
+          This is a <b>carbon-neutral</b> delivery
+        </p>
+      </div>
+      <button className="confirm" onClick={() => setModalIsOpen(true)}>
+        Confirm Order
+      </button>
+
+      <Modal isOpen={isModalOpen} onClose={() => setModalIsOpen(false)} />
     </div>
   );
 }
