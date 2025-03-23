@@ -10,9 +10,9 @@ function Product({ d }) {
   return (
     <div>
       <picture>
-        <source srcSet={d.image.mobile} media="(max-width: 500px)" />
-        <source srcSet={d.image.tablet} media="(max-width: 850px)" />
-        <source srcSet={d.image.desktop} media="(min-width: 851px)" />
+        <source srcSet={d.image.mobile} media="(max-width: 450px)" />
+        <source srcSet={d.image.tablet} media="(max-width: 800px)" />
+        <source srcSet={d.image.desktop} media="(min-width: 801px)" />
 
         <button
           className={`card ${isAdded ? "added" : ""}`}
@@ -49,8 +49,11 @@ function Product({ d }) {
             </>
           )}
         </button>
-
-        <img src={d.image.desktop} alt={d.name} className="product-image" />
+        <img
+          src={d.image.desktop}
+          alt={d.name}
+          className={`product-image ${isAdded ? "border-red" : ""}`}
+        />
       </picture>
       <h3 className="categorys">{d.category}</h3>
       <h2 className="names">{d.name}</h2>
